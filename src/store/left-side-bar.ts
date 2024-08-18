@@ -16,6 +16,7 @@ export interface ICollections {
 }
 
 const defaultCollections: ICollections[] = [
+  { id: uniqueId(), type: "collection", name: "MCC Manulife" },
   {
     id: uniqueId(),
     type: "collection",

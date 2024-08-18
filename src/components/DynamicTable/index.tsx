@@ -46,7 +46,7 @@ export const DynamicTable = ({
 
   return (
     <Box>
-      <Text fontSize="0.875rem" fontWeight="bold" color="tomato">
+      <Text fontSize="0.875rem" fontWeight="bold" color="blue.500">
         {title}
       </Text>
       <TableContainer>

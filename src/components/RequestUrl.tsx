@@ -32,7 +32,6 @@ function RequestUrl() {
 
   const handleChangeUrl = (e) => {
     const { value } = e.target;
-    console.log("value: ", value);
     const searchIndex = value.indexOf("?");
     if (searchIndex === -1 || searchIndex + 1 === value.length) {
       setUrl(value);
@@ -46,12 +45,9 @@ function RequestUrl() {
       const paramsArray = [];
       while (true) {
         const result = iterator.next();
-        console.log("result: ", result);
         if (result.done) break;
         paramsArray.push({ key: result.value[0], value: result.value[1] });
       }
-
-      console.log("paramsArray: ", paramsArray);
       setParams(paramsArray);
     }
   };
