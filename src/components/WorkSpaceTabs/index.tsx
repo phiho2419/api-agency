@@ -44,16 +44,13 @@ const TabIcon = ({ type, method = "" }) => {
 const CustomTab = forwardRef((props, ref) => {
   // 1. Reuse the `useTab` hook
   const tabProps = useTab({ ...props, ref });
-//   const isSelected = !!tabProps["aria-selected"];
+  //   const isSelected = !!tabProps["aria-selected"];
 
   // 2. Hook into the Tabs `size`, `variant`, props
   const styles = useMultiStyleConfig("Tabs", tabProps);
 
   return (
-    <Button
-      __css={{ ...styles.tab }}
-      {...tabProps}
-    >
+    <Button __css={{ ...styles.tab }} {...tabProps}>
       {tabProps.children}
     </Button>
   );
@@ -61,18 +58,23 @@ const CustomTab = forwardRef((props, ref) => {
 
 function WorkSpaceTabs() {
   return (
-    <Box mb={"15px"}>
+    <Box mb={"15px"} borderBottom={"1px solid #cecece"} pl={"10px"}>
       <Tabs>
         <TabList>
           {tabs.map((tab) => (
-            <CustomTab padding={"0px 30px 8px 30px"} key={tab.id}>
+            <CustomTab padding={"8px 30px 8px 30px"} key={tab.id}>
               <Box display={"flex"} alignItems={"center"}>
                 <TabIcon type={tab.type} method={tab.method} />
                 <Text>{tab.name}</Text>
               </Box>
             </CustomTab>
           ))}
-          <Box display={"flex"} alignItems={"center"} paddingLeft={"15px"}>
+          <Box
+            display={"flex"}
+            alignItems={"center"}
+            paddingLeft={"10px"}
+            paddingY={"8px"}
+          >
             <Icon as={FaPlus} boxSize={4} cursor="pointer" />
           </Box>
         </TabList>

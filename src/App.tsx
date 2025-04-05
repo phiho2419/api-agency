@@ -30,12 +30,12 @@ function App() {
     <>
       <ChakraProvider>
         <Container maxW={"container.xl"}>
-          <Heading color={"blue.500"} my={"2rem"}>
+          <Heading color={"blue.500"} py={"2rem"} borderBottom={"1px solid #cecece"}>
             Api Agency
           </Heading>
           <Box display={"flex"}>
             <Box
-              style={{
+              sx={{
                 width: "450px",
                 border: "1px solid #cecece",
                 minHeight: "100vh",
@@ -52,7 +52,6 @@ function App() {
                   <TabList>
                     <Tab>Params</Tab>
                     <Tab>Headers</Tab>
-                    <Tab>Body</Tab>
                   </TabList>
 
                   <TabPanels>

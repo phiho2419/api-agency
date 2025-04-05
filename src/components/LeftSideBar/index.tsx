@@ -27,30 +27,32 @@ export default function LeftSideBar() {
 
   return (
     <Box sx={{ minHeight: 352, minWidth: 250 }}>
-      <InputGroup size="sm" mb={1}>
-        <InputLeftAddon cursor="pointer">
+      <InputGroup size="sm" mt={"8px"}>
+        <InputLeftAddon cursor="pointer" borderRadius={"none"}>
           <Icon as={FaPlus} boxSize={5} />
         </InputLeftAddon>
-        <InputGroup size="sm" mb={1}>
+        <InputGroup size="sm" mb={1} borderRadius={"none"}>
           <Input borderRadius={0} size={"sm"} />
           <InputRightElement cursor="pointer">
             <Icon as={CiSearch} boxSize={5} />
           </InputRightElement>
         </InputGroup>
-        <InputRightAddon cursor="pointer">
+        <InputRightAddon cursor="pointer" borderRadius={"none"}>
           <Icon as={IoIosMore} boxSize={5} />
         </InputRightAddon>
       </InputGroup>
-      <SimpleTreeView>
-        {collections.map((item, index) => (
-          <NestedNode
-            key={index + item.id}
-            id={item.id}
-            name={item.name}
-            children={item.children}
-          />
-        ))}
-      </SimpleTreeView>
+      <Box pl={"13px"}>
+        <SimpleTreeView>
+          {collections.map((item, index) => (
+            <NestedNode
+              key={index + item.id}
+              id={item.id}
+              name={item.name}
+              children={item.children}
+            />
+          ))}
+        </SimpleTreeView>
+      </Box>
     </Box>
   );
 }

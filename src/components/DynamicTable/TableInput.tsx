@@ -37,5 +37,7 @@ export const TableInput = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [valueMode]);
 
-  return <Input onChange={onValueChange} value={inputValue} />;
+  return (
+    <Input onChange={onValueChange} value={inputValue} borderRadius={"2px"} />
+  );
 };
